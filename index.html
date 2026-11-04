@@ -4,21 +4,29 @@
     font-size: 10vh;
     font-weight: 100;
 ">TOG's Minecraft</h1>
-<p  style="
+<p style="
     font-family: minecraft;
     color: white;
-    font-size: 10vh;
-    font-weight: 100;>Enter the ip as</p>
+    font-size: 2.5vh;
+    text-align: center;
+    margin-top: -2vh;
+">
+    Paste this as the server IP:<br>
+    tog-alpha.eagler.host<br>
+    or<br>
+    wss://humble-space-computing-machine-xj454q46r46fqrj-8081.app.github.dev/
+</p>
 <button style="display:none;" onclick="launchWASM()" id="wb">WASM</button>
 <script>
+    function launchWASM(){
+    localStorage.setItem("game","true");
+    window.location.href="wasm.html";
+  }
+    
     window.onload=function(){
     document.getElementById("gb").style.display="block";
     document.getElementById("wb").style.display="block";
   };
-  function launchWASM(){
-    localStorage.setItem("game","true");
-    window.location.href="TOG-1.12.2/wasm.html";
-  }
 </script>
 <style>
   @font-face {
