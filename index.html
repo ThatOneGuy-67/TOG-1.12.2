@@ -4,20 +4,20 @@
     font-size: 10vh;
     font-weight: 100;
 ">TOG's Minecraft</h1>
-<button style="display:none;" onclick="launchServer()" id="gb">Game</button>
+<p  style="
+    font-family: minecraft;
+    color: white;
+    font-size: 10vh;
+    font-weight: 100;>Enter the ip as</p>
 <button style="display:none;" onclick="launchWASM()" id="wb">WASM</button>
 <script>
-  function launchServer(){
-    localStorage.setItem("game","true");
-    window.location.href="/game.html";
-  }
-  window.onload=function(){
+    window.onload=function(){
     document.getElementById("gb").style.display="block";
     document.getElementById("wb").style.display="block";
   };
   function launchWASM(){
     localStorage.setItem("game","true");
-    window.location.href="/wasm.html";
+    window.location.href="TOG-1.12.2/wasm.html";
   }
 </script>
 <style>
