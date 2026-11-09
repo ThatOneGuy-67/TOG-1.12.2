@@ -1,3 +1,13 @@
+<h1 style="
+    font-family: minecraft;
+    color: white;
+    font-size: 10vh;
+    font-weight: 100;
+    margin-bottom: 2vh;
+">
+    TOG's Minecraft
+</h1>
+
 <button onclick="openGame()" id="game">
     GAME
 </button>
@@ -39,3 +49,43 @@ function openGame() {
     win.document.close();
 }
 </script>
+
+<style>
+@font-face {
+    font-family: minecraft;
+    src: url("Minecraft.ttf");
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-image: url("dirt.jpg");
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+button {
+    display: block;
+    font-family: minecraft;
+    color: white;
+    background: #6f6f6f;
+    padding: 2vh 6vw;
+    font-size: 5vh;
+    border: 1vh solid black;
+    margin: 2vh;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #222;
+}
+
+button:hover {
+    color: #ffff00;
+    background: #7e88bf;
+    transform: scale(1.08);
+}
+</style>
