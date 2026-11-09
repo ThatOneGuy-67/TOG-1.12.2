@@ -1,53 +1,41 @@
-<h1 style="
-    font-family: minecraft;
-    color: white;
-    font-size: 10vh;
-    font-weight: 100;
-    margin-bottom: 2vh;
-">
-    TOG's Minecraft
-</h1>
-
-<button onclick="window.location.href='Eaglercraft1.12.html'" id="game">
+<button onclick="openGame()" id="game">
     GAME
 </button>
 
-<style>
-@font-face {
-    font-family: minecraft;
-    src: url("Minecraft.ttf");
-}
+<script>
+function openGame() {
+    const win = window.open("about:blank", "_blank");
 
-body {
-    margin: 0;
-    overflow: hidden;
-    background-image: url("dirt.jpg");
-    background-repeat: repeat;
-    background-position: top left;
-    background-size: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
-}
+    if (!win) {
+        alert("Please allow pop-ups for this site.");
+        return;
+    }
 
-button {
-    display: block;
-    font-family: minecraft;
-    color: white;
-    background: #6f6f6f;
-    padding: 2vh 6vw;
-    font-size: 5vh;
-    border: 1vh solid black;
-    margin: 2vh;
-    cursor: pointer;
-    box-shadow: 0 5px 0 #222;
-}
+    win.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>TOG's Minecraft</title>
+            <style>
+                html, body {
+                    margin: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+            </style>
+        </head>
+        <body>
+            <iframe src="${new URL('Eaglercraft1.12.html', window.location.href).href}"></iframe>
+        </body>
+        </html>
+    `);
 
-button:hover {
-    color: #ffff00;
-    background: #7e88bf;
-    transform: scale(1.08);
+    win.document.close();
 }
-</style>
+</script>
